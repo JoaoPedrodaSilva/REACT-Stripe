@@ -4,13 +4,14 @@ import {FaBars} from 'react-icons/fa'
 import { useGlobalContext } from './context'
 
 const Navbar = () => {
-  const {openSidebar, openSubmenu, closeSubmenu} = useGlobalContext()
+  const {openSidebar, openSubmenu, closeSubmenu, page, setPage} = useGlobalContext()
   
   const displaySubmenu = (event) => openSubmenu(event.target.textContent)
 
   const handleSubmenu = (event) => {
     if(!event.target.classList.contains('nav-link-button')) {
       closeSubmenu()
+      setPage({page: '', links: []})
     }
   }
 
@@ -26,7 +27,7 @@ const Navbar = () => {
         {/* could make it through mapping the data */}
         <li className='nav-link'>
           <button
-            className='nav-link-button'
+            className={page.page === 'products' ? 'nav-link-button active' : 'nav-link-button'}
             onMouseOver={displaySubmenu}
           >
             products
@@ -34,7 +35,7 @@ const Navbar = () => {
         </li>
         <li className='nav-link'>
           <button
-            className='nav-link-button'
+            className={page.page === 'developers' ? 'nav-link-button active' : 'nav-link-button'}
             onMouseOver={displaySubmenu}
           >
             developers
@@ -42,7 +43,7 @@ const Navbar = () => {
         </li>
         <li className='nav-link'>
           <button
-            className='nav-link-button'
+            className={page.page === 'company' ? 'nav-link-button active' : 'nav-link-button'}
             onMouseOver={displaySubmenu}
           >
             company

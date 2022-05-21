@@ -1,29 +1,31 @@
-import { FaCreditCard, FaBook, FaBriefcase } from 'react-icons/fa'
 import React from 'react'
 
 const sublinks = [
   {
     page: 'products',
+    order: '1',
     links: [
-      { label: 'payment', icon: <FaCreditCard />, url: '/products' },
-      { label: 'terminal', icon: <FaCreditCard />, url: '/products' },
-      { label: 'connect', icon: <FaCreditCard />, url: '/products' }
+      { label: 'payment', url: '/products' },
+      { label: 'terminal', url: '/products' },
+      { label: 'connect', url: '/products' }
     ]
   },
   {
     page: 'developers',
+    order: '2',
     links: [
-      { label: 'plugins', icon: <FaBook />, url: '/products' },
-      { label: 'libraries', icon: <FaBook />, url: '/products' },
-      { label: 'help', icon: <FaBook />, url: '/products' },
-      { label: 'billing', icon: <FaBook />, url: '/products' }
+      { label: 'plugins', url: '/products' },
+      { label: 'libraries', url: '/products' },
+      { label: 'help', url: '/products' },
+      { label: 'billing', url: '/products' }
     ]
   },
   {
     page: 'company',
+    order: '3',
     links: [
-      { label: 'about', icon: <FaBriefcase />, url: '/products' },
-      { label: 'customers', icon: <FaBriefcase />, url: '/products' }
+      { label: 'about', url: '/products' },
+      { label: 'customers', url: '/products' }
     ]
   }
 ]
